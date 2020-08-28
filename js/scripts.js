@@ -30,9 +30,41 @@ function Sides(salad, drink, desert) {
   this.currentId = 0
 }
 
+// Business Logic for Pizzas 
+
 function Pizza(cheese, toppings) {
   this.cheese = cheese;
   this.toppings = [];
   this.currentId = 0
 }
+
+Pizza.prototype.assignIdTopping = function() {
+  this.currentId +=1;
+  return this.currentId;
+}
+
+Pizza.prototype.addTopping = function(topping) {
+  topping.id = this.assignIdTopping();
+  this.toppings.push(topping);
+}
+
+// Business Logic for Toppings (nested in Pizzas)
+
+function Topping(topping1, topping2, topping3) {
+  this.topping1 = topping1;
+  this.topping2 = topping2;
+  this.topping3 = topping3;
+}
+
+// Deleting options
+
+Order.prototype.deleteSide = function(id) {
+  for (let i=0; i< this.sides.length; i++) {
+    if (this.sides[i].id == id) {
+      delete this.sides[i];
+      return true;
+    }
+  }
+}
+
 
