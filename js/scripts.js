@@ -122,20 +122,23 @@ function displayOrder(orderToDisplay) {
 
 function displayOrder(input) {
   const keys = Object.keys(input);
-  console.log(keys);
   let arrayOfItems = [];
+  let finalItemList = "";
     keys.forEach(function(key) {
       arrayOfItems.push(key + ":" + input[key]);
-      console.log(arrayOfItems);
     });
     console.log(arrayOfItems);
-    for(let i of arrayOfItems) {
-      if (i === "size:0") {
-        return "Working";
-      } else {
-        return "Broken?";
+    arrayOfItems.forEach(function(element) {
+      console.log(element);
+      console.log("before" + finalItemList);
+      if (element === "side:1"){
+        finalItemList.concat("1 woah nice");
+      } else if (element === "side:2") {
+        finalItemList.concat("2 good choice");
       }
-    };
+      console.log("after" + finalItemList);
+    });
+    return finalItemList;
   }
 
 
@@ -161,6 +164,6 @@ $(document).ready(function() {
 
     // User Input Displayed 
     console.log(newPizza);
-    console.log(displayOrder(newPizza));
+    $("p#show-order").text(displayOrder(newPizza));
   });
 });
