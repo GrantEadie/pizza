@@ -39,13 +39,27 @@ function Pizza(size, cheese, topping) {
 
 // Price Logic
 
-Order.prototype.price = function(pizza) {
+Order.prototype.pricePizza = function(pizza) {
   let sum = 0;
   let i = 0;
   for (let a in pizza) {
     i ++;
     if(pizza.hasOwnProperty(a) && (i <= 3)) {
       sum += parseInt(pizza[a]);
+    } else {
+      return sum
+    }
+  }
+  return sum;
+}
+
+Order.prototype.priceSides = function(side) {
+  let sum = 0;
+  let i = 0;
+  for (let a in side) {
+    i ++;
+    if(side.hasOwnProperty(a) && (i <= 3)) {
+      sum += parseInt(side[a]);
     } else {
       return sum
     }
@@ -106,6 +120,18 @@ function displayOrder(orderToDisplay) {
   orderList.html(htmlForOrder);
 };
 
+function displayOrder(newOrder) {
+  const keys = Object.keys(newOrder);
+  let arrayOfItems = [];
+    keys.forEach(function(key) {
+      arrayOfItems.push(key + ":" + newOrder[key]);
+    });
+    console.log(arrayOfItems);
+    arrayOfItems.forEach(element) {
+      if (element === "")
+    }
+  }
+
 
 $(document).ready(function() {
   $("form.new-order").submit(function(event) {
@@ -117,14 +143,18 @@ $(document).ready(function() {
     const inputtedDrink = $("#drink").val();
     const inputtedDessert = $("#dessert").val();
 
+    // New Order, Sides, and Pizza
     let newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCheese, inputtedPizzaTopping);
     let newSide = new Sides(inputtedSalad, inputtedDrink, inputtedDessert)
     newOrder.addPizza(newPizza);
-    console.log(newSide);
     newOrder.addSide(newSide);
     displayOrder(newOrder);
 
-    let priceManager = newOrder.price(newPizza);
+    // prices
+    let priceManager = ((newOrder.pricePizza(newPizza)) + (newOrder.priceSides(newSide)));
     $("p#price").text(priceFinder(priceManager));
+
+    // User Input Displayed 
+    console.log(displayOrder(newPizza));
   });
 });

@@ -20,3 +20,7 @@
 .bold {
   font-weight: 700;
 }
+
+.align {
+  text-align: right;
+}
