@@ -50,10 +50,8 @@ Pizza.prototype.addTopping = function(topping) {
 
 // Business Logic for Toppings (nested in Pizzas)
 
-function Topping(topping1, topping2, topping3) {
-  this.topping1 = topping1;
-  this.topping2 = topping2;
-  this.topping3 = topping3;
+function Topping(topping1) {
+  this.topping1 = [];
 }
 
 // Deleting options
@@ -64,7 +62,8 @@ Order.prototype.deleteSide = function(id) {
       delete this.sides[i];
       return true;
     }
-  }
+  };
+  return false;
 }
 
 Order.prototype.deletePizza = function(id) {
@@ -73,7 +72,18 @@ Order.prototype.deletePizza = function(id) {
       delete this.sides[i];
       return true;
     }
-  }
+  };
+  return false;
+}
+
+Pizza.prototype.deleteToppings = function(id) {
+  for (let i=0; i< this.sides.length; i++) {
+    if (this.sides[i].id == id) {
+      delete this.sides[i];
+      return true;
+    }
+  };
+  return false;
 }
 
 

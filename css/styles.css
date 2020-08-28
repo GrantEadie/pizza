@@ -1,0 +1,10 @@
+.jumbotron {
+  background: whitesmoke;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100px;
+}
+
+.sub-text {
+  font-size: 20px;
+  padding-left: 50px;
+}
