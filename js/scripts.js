@@ -122,22 +122,20 @@ function displayOrder(orderToDisplay) {
 
 function displayOrder(input) {
   const keys = Object.keys(input);
-  let arrayOfItems = [];
+  console.log(keys);
   let finalItemList = "";
+  let arrayOfItems = [];
     keys.forEach(function(key) {
       arrayOfItems.push(key + ":" + input[key]);
+      console.log(arrayOfItems);
     });
     console.log(arrayOfItems);
-    arrayOfItems.forEach(function(element) {
-      console.log(element);
-      console.log("before" + finalItemList);
-      if (element === "side:1"){
-        finalItemList.concat("1 woah nice");
-      } else if (element === "side:2") {
-        finalItemList.concat("2 good choice");
+    for (let i = 0; i < arrayOfItems.length; i++){
+      console.log(arrayOfItems[i]);
+      if (arrayOfItems[i] === "size:1") {
+        finalItemList += "Square, 12 inches";
       }
-      console.log("after" + finalItemList);
-    });
+    };
     return finalItemList;
   }
 
