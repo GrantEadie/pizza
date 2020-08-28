@@ -38,20 +38,19 @@ function Pizza(size, cheese, topping) {
 }
 
 Order.prototype.price = function(pizza) {
- const array = Object.keys(pizza);
- let string = "";
- array.forEach(function(key) {
-   string = string.concat(pizza[key]);
-  });
-  return string;
+  let sum = 0;
+  let i = 0;
+  for (let a in pizza) {
+    i ++;
+    console.log(i);
+    if(pizza.hasOwnProperty(a) && (i <= 3)) {
+      sum += parseInt(pizza[a]);
+    } else {
+      return sum
+    }
+  }
+  return sum;
 }
- // let sum = 0;
-  // for (let a in pizza) {
-  //   if(pizza.hasOwnProperty(a)) {
-  //     sum += parseInt(pizza[a]);
-  //   }
-  // }
-  // return sum;
 
 
 // Deleting options ---------
