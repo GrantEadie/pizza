@@ -98,7 +98,10 @@ function displayOrder(orderToDisplay) {
   let orderList = $("ul#show-order");
   let htmlForOrder = "";
   orderToDisplay.pizzas.forEach(function(pizza) {
-    htmlForOrder+= "<li id=" + pizza.id + ">" + pizza.id + ") " + pizza.size + " " + pizza.cheese + " " + pizza.toppings + "</li>";
+    htmlForOrder+= "<li id=" + pizza.id + ">" + pizza.id + ") " + pizza.size + " " + pizza.cheese + " " + pizza.toppings + "</li>"
+  });
+  orderToDisplay.sides.forEach(function(side) {
+    htmlForOrder+= "<li id=" + side.id + ">" + side.id + ") " + side.salad + " " + side.drink + " " + side.dessert + "</li>"
   });
   orderList.html(htmlForOrder);
 };
@@ -117,8 +120,8 @@ $(document).ready(function() {
     let newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCheese, inputtedPizzaTopping);
     let newSide = new Sides(inputtedSalad, inputtedDrink, inputtedDessert)
     newOrder.addPizza(newPizza);
-
-    console.log(newOrder.addSide(newSide));
+    console.log(newSide);
+    newOrder.addSide(newSide);
     displayOrder(newOrder);
 
     let priceManager = newOrder.price(newPizza);
