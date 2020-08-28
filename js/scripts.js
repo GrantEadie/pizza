@@ -56,17 +56,17 @@ Order.prototype.price = function(pizza) {
 
 function priceFinder(priceManager) {
   if (priceManager < 4) {
-    return "Your total is 20";
+    return "Your total will be 20";
   } else if (priceManager <= 5) {
-    return "Your total is 30";
+    return "Your total will be 30";
   } else if (priceManager <= 6) {
-    return "Your total is 40";
+    return "Your total will be 40";
   } else if (priceManager <= 7) {
-    return "Your total is 50";
+    return "Your total will be 50";
   } else if (priceManager <= 8) {
-    return "Your total is 60" 
+    return "Your total will be 60" 
   } else {
-    return "Your total is 70";
+    return "Your total will be 70";
   }
 }
 
@@ -117,6 +117,6 @@ $(document).ready(function() {
     displayOrder(newOrder);
 
     let priceManager = newOrder.price(newPizza);
-    console.log(priceFinder(priceManager));
+    $("p#price").text(priceFinder(priceManager));
   });
 });
