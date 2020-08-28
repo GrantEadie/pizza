@@ -55,7 +55,19 @@ Order.prototype.price = function(pizza) {
 }
 
 function priceFinder(priceManager) {
-  
+  if (priceManager < 4) {
+    return "Your total is 20";
+  } else if (priceManager <= 5) {
+    return "Your total is 30";
+  } else if (priceManager <= 6) {
+    return "Your total is 40";
+  } else if (priceManager <= 7) {
+    return "Your total is 50";
+  } else if (priceManager <= 8) {
+    return "Your total is 60" 
+  } else {
+    return "Your total is 70";
+  }
 }
 
 // Deleting options ---------
@@ -96,9 +108,9 @@ function displayOrder(orderToDisplay) {
 $(document).ready(function() {
   $("form.new-order").submit(function(event) {
     event.preventDefault();
-    const inputtedPizzaSize = parseInt($("#pizza-size").val());
-    const inputtedPizzaCheese = parseInt($("#pizza-cheese").val());
-    const inputtedPizzaTopping = parseInt($("#pizza-topping").val());
+    const inputtedPizzaSize = $("#pizza-size").val();
+    const inputtedPizzaCheese = $("#pizza-cheese").val();
+    const inputtedPizzaTopping = $("#pizza-topping").val();
     console.log(inputtedPizzaSize, inputtedPizzaCheese, inputtedPizzaTopping);
     let newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCheese, inputtedPizzaTopping);
     newOrder.addPizza(newPizza);
