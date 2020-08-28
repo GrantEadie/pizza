@@ -23,7 +23,7 @@ Order.prototype.assignId = function() {
 
 
 // Business Logic for Sides --------- 
-function Sides(salad, drink, desert) {
+function Sides(salad, drink, dessert) {
   this.salad = salad;
   this.drink = drink;
   this.dessert = dessert;
@@ -44,7 +44,6 @@ Order.prototype.price = function(pizza) {
   let i = 0;
   for (let a in pizza) {
     i ++;
-    console.log(i);
     if(pizza.hasOwnProperty(a) && (i <= 3)) {
       sum += parseInt(pizza[a]);
     } else {
@@ -118,6 +117,8 @@ $(document).ready(function() {
     let newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCheese, inputtedPizzaTopping);
     let newSide = new Sides(inputtedSalad, inputtedDrink, inputtedDessert)
     newOrder.addPizza(newPizza);
+
+    console.log(newOrder.addSide(newSide));
     displayOrder(newOrder);
 
     let priceManager = newOrder.price(newPizza);
