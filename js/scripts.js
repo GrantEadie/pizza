@@ -67,4 +67,13 @@ Order.prototype.deleteSide = function(id) {
   }
 }
 
+Order.prototype.deletePizza = function(id) {
+  for (let i=0; i< this.sides.length; i++) {
+    if (this.sides[i].id == id) {
+      delete this.sides[i];
+      return true;
+    }
+  }
+}
+
 
