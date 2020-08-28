@@ -38,6 +38,16 @@ function Pizza(size, cheese, topping) {
   this.toppings = topping;
 }
 
+Order.prototype.price = function(pizza) {
+  let array = this.pizzas[0];
+  let sum = 0;
+  for (let i=0; i <= 2; i++){
+    console.log(array[i]);
+  sum += array[i];
+  }
+  return sum;
+}
+
 
 // Deleting options ---------
 Order.prototype.deleteSide = function(id) {
@@ -68,7 +78,7 @@ function displayOrder(orderToDisplay) {
   let orderList = $("ul#show-order");
   let htmlForOrder = "";
   orderToDisplay.pizzas.forEach(function(pizza) {
-    htmlForOrder+= "<li id=" + pizza.id + ">" + pizza.size + " " + pizza.cheese + pizza.topping + "</li>";
+    htmlForOrder+= "<li id=" + pizza.id + ">" + pizza.id + ") " + pizza.size + " " + pizza.cheese + " " + pizza.toppings + "</li>";
   });
   orderList.html(htmlForOrder);
 };
@@ -77,14 +87,14 @@ function displayOrder(orderToDisplay) {
 $(document).ready(function() {
   $("form.new-order").submit(function(event) {
     event.preventDefault();
-    const inputtedPizzaSize = $("#pizza-size").val();
-    const inputtedPizzaCheese = $("#pizza-cheese").val();
-    const inputtedPizzaTopping = $("#pizza-topping").val();
+    const inputtedPizzaSize = parseInt($("#pizza-size").val());
+    const inputtedPizzaCheese = parseInt($("#pizza-cheese").val());
+    const inputtedPizzaTopping = parseInt($("#pizza-topping").val());
     console.log(inputtedPizzaSize, inputtedPizzaCheese, inputtedPizzaTopping);
     // const inputtedSide = $("input#side").val();
     let newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCheese, inputtedPizzaTopping);
     newOrder.addPizza(newPizza);
-    console.log(newOrder.pizzas);
+    console.log(newOrder.price(newPizza));
     displayOrder(newOrder);
   });
 });
