@@ -12,3 +12,7 @@
 .user-input {
   font-family: 'Open Sans', sans-serif;
 }
+
+#show-order {
+  display: none;
+}
