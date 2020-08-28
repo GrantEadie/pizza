@@ -127,9 +127,13 @@ function displayOrder(newOrder) {
       arrayOfItems.push(key + ":" + newOrder[key]);
     });
     console.log(arrayOfItems);
-    arrayOfItems.forEach(element) {
-      if (element === "")
-    }
+    arrayOfItems.forEach(function(element) {
+      if (element === "size:0") {
+        return "Working"
+      } else {
+        return "Broken?"
+      }
+    });
   }
 
 
