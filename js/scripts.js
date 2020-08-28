@@ -120,21 +120,22 @@ function displayOrder(orderToDisplay) {
   orderList.html(htmlForOrder);
 };
 
-function displayOrder(newPizza) {
-  const keys = Object.keys(newPizza);
+function displayOrder(input) {
+  const keys = Object.keys(input);
+  console.log(keys);
   let arrayOfItems = [];
     keys.forEach(function(key) {
-      arrayOfItems.push(key + ":" + newPizza[key]);
+      arrayOfItems.push(key + ":" + input[key]);
       console.log(arrayOfItems);
     });
-    // console.log(arrayOfItems);
-    arrayOfItems.forEach(function(element) {
-      if (element === "size:0") {
-        return "Working"
+    console.log(arrayOfItems);
+    for(let i of arrayOfItems) {
+      if (i === "size:0") {
+        return "Working";
       } else {
-        return "Broken?"
+        return "Broken?";
       }
-    });
+    };
   }
 
 
@@ -153,13 +154,13 @@ $(document).ready(function() {
     let newSide = new Sides(inputtedSalad, inputtedDrink, inputtedDessert)
     newOrder.addPizza(newPizza);
     newOrder.addSide(newSide);
-    displayOrder(newOrder);
 
     // prices
     let priceManager = ((newOrder.pricePizza(newPizza)) + (newOrder.priceSides(newSide)));
     $("p#price").text(priceFinder(priceManager));
 
     // User Input Displayed 
-    console.log(displayOrder(newOrder[1]));
+    console.log(newPizza);
+    console.log(displayOrder(newPizza));
   });
 });
