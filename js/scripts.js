@@ -33,26 +33,12 @@ function Sides(salad, drink, desert) {
 // Business Logic for Pizzas --------- 
 
 function Pizza(cheese, toppings) {
+  this.size = size;
   this.cheese = cheese;
   this.toppings = [];
   this.currentId = 0
 }
 
-Pizza.prototype.assignIdTopping = function() {
-  this.currentId +=1;
-  return this.currentId;
-}
-
-Pizza.prototype.addTopping = function(topping) {
-  topping.id = this.assignIdTopping();
-  this.toppings.push(topping);
-}
-
-// Business Logic for Toppings (nested in Pizzas) ---------
-
-function Topping(topping1) {
-  this.topping1 = [];
-}
 
 // Deleting options ---------
 
@@ -87,16 +73,17 @@ Pizza.prototype.deleteToppings = function(id) {
 }
 
 // User Interface Logic ---------
-let addressBook = new AddressBook();
+let newOrder = new Order();
 
 $(document).ready(function() {
-  $("form#new-contact").submit(function(event) {
+  $("form#new-order").submit(function(event) {
     event.preventDefault();
-    const inputtedFirstName = $("input#new-first-name").val();
-    const inputtedLastName = $("input#new-last-name").val();
-    const inputtedPhoneNumber = $("input#new-phone-number").val();
-    let newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
-    addressBook.addContact(newContact);
+    const inputtedPizzaSize = $("input#pizza-size").val();
+    const inputtedPizzaCheese = $("input#pizza-cheese").val();
+    const inputtedPizzaTopping = $("input#pizza-topping").val();
+    const inputtedSide = $("input#side").val();
+    
+    newOrder.addPizza(newPizza);
     console.log(addressBook.contacts);
   });
 });
