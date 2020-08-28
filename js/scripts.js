@@ -64,13 +64,13 @@ Order.prototype.deletePizza = function(id) {
 // User Interface Logic ---------
 let newOrder = new Order();
 
-function displayContactDetails(addressBookToDisplay) {
-  let contactsList = $("ul#contacts");
-  let htmlForContactInfo = "";
-  addressBookToDisplay.contacts.forEach(function(contact) {
-    htmlForContactInfo += "<li id=" + contact.id + ">" + contact.firstName + " " + contact.lastName + "</li>";
+function displayOrder(orderToDisplay) {
+  let orderList = $("ul#show-order");
+  let htmlForOrder = "";
+  orderToDisplay.pizzas.forEach(function(pizza) {
+    htmlForOrder+= "<li id=" + pizza.id + ">" + pizza.size + " " + pizza.cheese + pizza.topping + "</li>";
   });
-  contactsList.html(htmlForContactInfo);
+  orderList.html(htmlForOrder);
 };
 
 
@@ -85,5 +85,6 @@ $(document).ready(function() {
     let newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCheese, inputtedPizzaTopping);
     newOrder.addPizza(newPizza);
     console.log(newOrder.pizzas);
+    displayOrder(newOrder);
   });
 });
