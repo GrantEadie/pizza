@@ -37,6 +37,8 @@ function Pizza(size, cheese, topping) {
   this.toppings = topping;
 }
 
+// Price Logic
+
 Order.prototype.price = function(pizza) {
   let sum = 0;
   let i = 0;
@@ -50,6 +52,10 @@ Order.prototype.price = function(pizza) {
     }
   }
   return sum;
+}
+
+function priceFinder(priceManager) {
+  
 }
 
 // Deleting options ---------
@@ -94,11 +100,11 @@ $(document).ready(function() {
     const inputtedPizzaCheese = parseInt($("#pizza-cheese").val());
     const inputtedPizzaTopping = parseInt($("#pizza-topping").val());
     console.log(inputtedPizzaSize, inputtedPizzaCheese, inputtedPizzaTopping);
-    // const inputtedSide = $("input#side").val();
     let newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCheese, inputtedPizzaTopping);
     newOrder.addPizza(newPizza);
     displayOrder(newOrder);
 
-    alert(newOrder.price(newPizza));
+    let priceManager = newOrder.price(newPizza);
+    console.log(priceFinder(priceManager));
   });
 });
