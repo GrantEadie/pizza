@@ -27,7 +27,6 @@ function Sides(salad, drink, desert) {
   this.salad = salad;
   this.drink = drink;
   this.desert = desert;
-  this.currentId = 0
 }
 
 
@@ -45,6 +44,7 @@ Order.prototype.price = function(pizza) {
       sum += parseInt(pizza[a]);
     }
   }
+  return sum;
 }
 
 
