@@ -86,4 +86,3 @@ Pizza.prototype.deleteToppings = function(id) {
   return false;
 }
 
-
