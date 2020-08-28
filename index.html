@@ -6,17 +6,21 @@
   <script src="js/jquery-3.5.1.js"></script>
   <script src="js/scripts.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
   <title>Minimalist Pizza</title>
 </head>
 <body>
   <div class="container">
     <h1 class="jumbotron">&#9900 pzza<span class="sub-text">simply pie</span></h1>
 
-    <form class="new-order">
+    <h2 class="fontfix">entree.</h2>
+    <hr>
+    <form class="new-order fontfix">
       <!-- Pizza SIZE selection  -->
       <div class="form-group">
-        <label>Select an entree size</label>
+        <label>Select a <span class="bold">polygon.</span></label>
         <select class="form-control" id="pizza-size">
+          <option value="0"></option>
           <option value="1">Square || 12" </option>
           <option value="2">Circle || 16"</option>
           <option value="3">Mobius Strip || undefined</option>
@@ -25,8 +29,9 @@
 
       <!-- Pizza cheese selection  -->
       <div class="form-group">
-        <label>Select a fatty medium</label>
+        <label>Select a fatty <span class="bold">medium.</span></label>
         <select class="form-control" id="pizza-cheese">
+          <option value="0"></option>
           <option value="1">Aged Chèvre </option>
           <option value="2">Red Wine Marinated Bocconcini</option>
           <option value="3">Authentic La Mancha Manchego</option>
@@ -35,35 +40,54 @@
 
       <!-- Pizza cheese selection  -->
       <div class="form-group">
-        <label>Select a textural balance and flavor profile</label>
+        <label>Select a textural balance and <span class="bold">flavor profile.</span></label>
         <select class="form-control" id="pizza-topping">
+          <option value="0"></option>
           <option value="1">Arugula and Prosciutto</option>
           <option value="2">Alaskan Salmon, Spinach, Pickled Medley</option>
           <option value="3">Wild Morels and grass fed, humanely raised Filet Minot</option>
         </select>
       </div>
+      <br>
 
+      <h2 class="fontfix">addition.</h2>
+      <hr>
       <!-- Side selection  -->
       <div class="form-group">
-        <label>Select an asortment of earth grown delicacies</label>
+        <label>Select an asortment of <span class="bold">earth grown</span> delicacies.</label>
         <select class="form-control" id="salad">
-          <option>Avocado and Sesame Seeds with Honey Balsamic Vinegarette</option>
-          <option>Pickled Beet Caprese</option>
-          <option>Simple Farm Greens with Sun Dried Cherry Tomatoes</option>
+          <option value="0">None</option>
+          <option value="1">Avocado and Sesame Seeds with Honey Balsamic Vinegarette</option>
+          <option value="2">Pickled Beet Caprese</option>
+          <option value="3">Simple Farm Greens with Sun Dried Cherry Tomatoes</option>
         </select>
       </div>
 
       <!-- Drink selection -->
       <div class="form-group">
-        <label>Select an asortment of earth grown delicacies</label>
+        <label>Select pairing <span class="bold">liquid.</span></label>
         <select class="form-control" id="salad">
-          <option>Avocado and Sesame Seeds with Honey Balsamic Vinegarette</option>
-          <option>Pickled Beet Caprese</option>
-          <option>Simple Farm Greens with Sun Dried Cherry Tomatoes</option>
+          <option value="0">None</option>
+          <option value="1">Turmeric Shot with Lemongrass Infused Mineral Water</option>
+          <option value="2">Lavender Honey June</option>
+          <option value="3">Wild Ferment Basque Style Apple Wine</option>
         </select>
       </div>
-      <button type="submit" class="btn btn-light btn-block">Place Order</button>
-    </form>
+
+    <!-- Drink selection -->
+    <div class="form-group">
+      <label>Select sweet <span class="bold">confection.</span></label>
+      <select class="form-control" id="dessert">
+        <option value="0">None</option>
+        <option value="1">Golden Raspberry Sorbet</option>
+        <option value="2">Matcha Tiramisu</option>
+        <option value="3">Mont Blanc Chocolate Pavlova</option>
+      </select>
+    </div>
+
+  <button type="submit" class="btn btn-light btn-block">Place Order</button>
+</form>
+
 
     <h2>Order</h2>
   <ul id="show-order">

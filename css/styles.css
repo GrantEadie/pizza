@@ -9,10 +9,14 @@
   padding-left: 50px;
 }
 
-.user-input {
+.fontfix {
   font-family: 'Open Sans', sans-serif;
 }
 
 #order {
   display: none;
+}
+
+.bold {
+  font-weight: 700;
 }

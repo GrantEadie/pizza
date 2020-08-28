@@ -26,7 +26,7 @@ Order.prototype.assignId = function() {
 function Sides(salad, drink, desert) {
   this.salad = salad;
   this.drink = drink;
-  this.desert = desert;
+  this.dessert = dessert;
 }
 
 
@@ -111,8 +111,12 @@ $(document).ready(function() {
     const inputtedPizzaSize = $("#pizza-size").val();
     const inputtedPizzaCheese = $("#pizza-cheese").val();
     const inputtedPizzaTopping = $("#pizza-topping").val();
-    console.log(inputtedPizzaSize, inputtedPizzaCheese, inputtedPizzaTopping);
+    const inputtedSalad = $("#salad").val();
+    const inputtedDrink = $("#drink").val();
+    const inputtedDessert = $("#dessert").val();
+
     let newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCheese, inputtedPizzaTopping);
+    let newSide = new Sides(inputtedSalad, inputtedDrink, inputtedDessert)
     newOrder.addPizza(newPizza);
     displayOrder(newOrder);
 
