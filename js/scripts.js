@@ -39,13 +39,12 @@ function Pizza(size, cheese, topping) {
 }
 
 Order.prototype.price = function(pizza) {
-  let array = this.pizzas[0];
   let sum = 0;
-  for (let i=0; i <= 2; i++){
-    console.log(array[i]);
-  sum += array[i];
+  for (let a in pizza) {
+    if(pizza.hasOwnProperty(a)) {
+      sum += parseInt(pizza[a]);
+    }
   }
-  return sum;
 }
 
 
