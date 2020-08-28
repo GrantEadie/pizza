@@ -52,7 +52,6 @@ Order.prototype.price = function(pizza) {
   return sum;
 }
 
-
 // Deleting options ---------
 Order.prototype.deleteSide = function(id) {
   for (let i=0; i< this.sides.length; i++) {
@@ -98,7 +97,8 @@ $(document).ready(function() {
     // const inputtedSide = $("input#side").val();
     let newPizza = new Pizza(inputtedPizzaSize, inputtedPizzaCheese, inputtedPizzaTopping);
     newOrder.addPizza(newPizza);
-    console.log(newOrder.price(newPizza));
     displayOrder(newOrder);
+
+    alert(newOrder.price(newPizza));
   });
 });
