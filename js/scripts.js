@@ -1,4 +1,4 @@
-// Business Logic for Order Form
+// Business Logic for Order Form ---------
 
 function Order() {
   this.sides = [];
@@ -21,7 +21,7 @@ Order.prototype.assignId = function() {
   return this.currentId;
 }
 
-// Business Logic for Sides 
+// Business Logic for Sides --------- 
 
 function Sides(salad, drink, desert) {
   this.salad = salad;
@@ -30,7 +30,7 @@ function Sides(salad, drink, desert) {
   this.currentId = 0
 }
 
-// Business Logic for Pizzas 
+// Business Logic for Pizzas --------- 
 
 function Pizza(cheese, toppings) {
   this.cheese = cheese;
@@ -48,13 +48,13 @@ Pizza.prototype.addTopping = function(topping) {
   this.toppings.push(topping);
 }
 
-// Business Logic for Toppings (nested in Pizzas)
+// Business Logic for Toppings (nested in Pizzas) ---------
 
 function Topping(topping1) {
   this.topping1 = [];
 }
 
-// Deleting options
+// Deleting options ---------
 
 Order.prototype.deleteSide = function(id) {
   for (let i=0; i< this.sides.length; i++) {
@@ -86,3 +86,17 @@ Pizza.prototype.deleteToppings = function(id) {
   return false;
 }
 
+// User Interface Logic ---------
+let addressBook = new AddressBook();
+
+$(document).ready(function() {
+  $("form#new-contact").submit(function(event) {
+    event.preventDefault();
+    const inputtedFirstName = $("input#new-first-name").val();
+    const inputtedLastName = $("input#new-last-name").val();
+    const inputtedPhoneNumber = $("input#new-phone-number").val();
+    let newContact = new Contact(inputtedFirstName, inputtedLastName, inputtedPhoneNumber);
+    addressBook.addContact(newContact);
+    console.log(addressBook.contacts);
+  });
+});
