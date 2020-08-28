@@ -120,13 +120,14 @@ function displayOrder(orderToDisplay) {
   orderList.html(htmlForOrder);
 };
 
-function displayOrder(newOrder) {
-  const keys = Object.keys(newOrder);
+function displayOrder(newPizza) {
+  const keys = Object.keys(newPizza);
   let arrayOfItems = [];
     keys.forEach(function(key) {
-      arrayOfItems.push(key + ":" + newOrder[key]);
+      arrayOfItems.push(key + ":" + newPizza[key]);
+      console.log(arrayOfItems);
     });
-    console.log(arrayOfItems);
+    // console.log(arrayOfItems);
     arrayOfItems.forEach(function(element) {
       if (element === "size:0") {
         return "Working"
@@ -159,6 +160,6 @@ $(document).ready(function() {
     $("p#price").text(priceFinder(priceManager));
 
     // User Input Displayed 
-    console.log(displayOrder(newPizza));
+    console.log(displayOrder(newOrder[1]));
   });
 });
