@@ -12,16 +12,37 @@
   <div class="container">
     <h1 class="jumbotron">&#9900 pzza<span class="sub-text">simply pie</span></h1>
 
-    <form class="user-input">
-      <!-- Pizza selection  -->
+    <form class="new-order">
+      <!-- Pizza SIZE selection  -->
       <div class="form-group">
-        <label>Select an entree</label>
-        <select multiple class="form-control" id="pizza">
-          <option>Square || 12" </option>
-          <option>Circle || 16"</option>
-          <option>Mobius Strip || undefined</option>
+        <label>Select an entree size</label>
+        <select multiple class="form-control" id="pizza-size">
+          <option value="size1">Square || 12" </option>
+          <option value="size2">Circle || 16"</option>
+          <option value="size3">Mobius Strip || undefined</option>
         </select>
       </div>
+
+      <!-- Pizza cheese selection  -->
+      <div class="form-group">
+        <label>Select a fatty medium</label>
+        <select multiple class="form-control" id="pizza-cheese">
+          <option value="cheese1">Aged Chèvre </option>
+          <option value="cheese2">Red Wine Marinated Bocconcini</option>
+          <option value="cheese3">Authentic La Mancha Manchego</option>
+        </select>
+      </div>
+
+      <!-- Pizza cheese selection  -->
+      <div class="form-group">
+        <label>Select a textural balance and flavor profile</label>
+        <select multiple class="form-control" id="pizza-topping">
+          <option value="cheese1">Arugula and Prosciutto</option>
+          <option value="cheese2">Alaskan Salmon, Spinach, Pickled Medly</option>
+          <option value="cheese3">Wild Morels and grass fed, humanely raised Filet Minot</option>
+        </select>
+      </div>
+
       <!-- Side selection  -->
       <div class="form-group">
         <label>Select a pairing dish</label>
