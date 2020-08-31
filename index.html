@@ -84,7 +84,7 @@
 
       <button type="submit" class="btn btn-light btn-block fontfix" style="font-weight:900"> &#9900 place order &#9900 </button>
     </form>
-    <br>
+      <br>
     <div class="fontfix show">
       <h2>your order .</h2>
       <p id="show-order" class="align">
@@ -93,6 +93,52 @@
       <h2>your total .</h2>
       <p id="price" class="align" style=
       "font-size: larger;"></p>
+      <hr>
+      <h2>please enter your name and address for delivery.</h2>
+      
+      <form class="needs-validation" novalidate>
+        <div class="form-row">
+          <div class="col-md-6">
+            <label for="validationCustom01">First name</label>
+            <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="validationCustom02">Last name</label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+        <div class="form-row">
+          <div class="col-md-4">
+            <label for="validationCustom03">City</label>
+            <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
+            <div class="invalid-feedback">
+              Please provide a valid city.
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom04">State</label>
+            <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
+            <div class="invalid-feedback">
+              Please provide a valid state.
+            </div>
+          </div>
+          <div class="col-md-4">
+            <label for="validationCustom05">Zip</label>
+            <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
+            <div class="invalid-feedback">
+              Please provide a valid zip.
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Submit Address</button>
+      </form>
+
     </div>
   </div> 
   <br>
