@@ -94,50 +94,47 @@
       <p id="price" class="align" style=
       "font-size: larger;"></p>
       <hr>
-      <h2>please enter your name and address for delivery.</h2>
-      
-      <form class="needs-validation" novalidate>
-        <div class="form-row">
-          <div class="col-md-6">
-            <label for="validationCustom01">First name</label>
-            <input type="text" class="form-control" id="validationCustom01" placeholder="First name" value="Mark" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label for="validationCustom02">Last name</label>
-            <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
-            <div class="valid-feedback">
-              Looks good!
-            </div>
-          </div>
-        <div class="form-row">
-          <div class="col-md-4">
-            <label for="validationCustom03">City</label>
-            <input type="text" class="form-control" id="validationCustom03" placeholder="City" required>
-            <div class="invalid-feedback">
-              Please provide a valid city.
-            </div>
-          </div>
-          <div class="col-md-4">
-            <label for="validationCustom04">State</label>
-            <input type="text" class="form-control" id="validationCustom04" placeholder="State" required>
-            <div class="invalid-feedback">
-              Please provide a valid state.
-            </div>
-          </div>
-          <div class="col-md-4">
-            <label for="validationCustom05">Zip</label>
-            <input type="text" class="form-control" id="validationCustom05" placeholder="Zip" required>
-            <div class="invalid-feedback">
-              Please provide a valid zip.
-            </div>
-          </div>
-        </div>
+      <h2 style="text-align:center; font-size:large"><i>enter your name and address for delivery.</i></h2>
+      <br>
+      <form>
 
-        <button class="btn btn-primary" type="submit">Submit Address</button>
-      </form>
+        <div class="form-group">
+          <label for="name" class="control-label">full Name</label>
+          <input type="text" class="form-control" id="name" name="full_name" placeholder="Adolph Blaine Charles David Earl Frederick Gerald Hubert Irvin John Kenneth Lloyd Martin Nero Oliver Paul Quincy Randolph Sherman Thomas Uncas Victor William Xerxes Yancy Wolfeschlegelsteinhausenbergerdorff">
+        </div>	
+        <div class="form-group">
+          <label for="address1" class="control-label">street address one</label>
+          <input type="text" class="form-control" id="address1" name="street1" placeholder="street address, p.o. box, company name, c/o">
+        </div>					     
+        <div class="form-group">
+          <label for="address2" class="control-label">street address two</label>
+          <input type="text" class="form-control" id="address2" name="street2" placeholder="apartment, suite, unit, building, floor, etc.">
+        </div>	     
+        <div class="form-group">
+          <label for="city" class="control-label">city</label>
+          <input type="text" class="form-control" id="city" name="city" placeholder="anchorage">
+        </div>									                   
+        <div class="form-group">
+          <label for="state" class="control-label">state</label>
+          <select class="form-control" id="state_id">
+            <option value="alaska">alaska</option>
+            <option value="idaho">idaho</option>
+            <option value="montana">montana</option>
+            <option value="oregon">oregon</option>
+            <option value="washington">washington</option>
+          </select>					
+        </div>
+        
+        <div class="form-group">
+          <label for="zipcode" class="control-label">zip code</label>
+          <input type="text" class="form-control" id="zip" name="zip" placeholder="#####">
+        </div>		
+        
+        <div class="form-group">
+          <button type="submit" class="btn btn-light btn-block"> &#9900 submit info &#9900 </button>
+        </div>     
+        
+      </form>	
 
     </div>
   </div> 
