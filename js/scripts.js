@@ -131,6 +131,7 @@ function displayOrder(input) {
     };
     return finalItemList;
   }
+}
 
 
 $(document).ready(function() {
