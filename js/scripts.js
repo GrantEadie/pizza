@@ -132,7 +132,16 @@ function displayOrder(input) {
         finalItemList += "Authentic La Mancha Manchego <br>";
       } else if (arrayOfItems[i] === "toppings:1") {
         finalItemList += "Arugula and Prosciutto <br>";
-        
+      } else if (arrayOfItems[i] === "toppings:1") {
+        finalItemList += "Arugula and Prosciutto <br>";
+      } else if (arrayOfItems[i] === "salad:1") {
+        finalItemList += "Avocado and Sesame Seeds with Honey Balsamic Vinegarette <br>";
+      } else if (arrayOfItems[i] === "salad:2") {
+        finalItemList += "Pickled Beet Caprese <br>";
+      } else if (arrayOfItems[i] === "salad:3") {
+        finalItemList += "Simple Farm Greens with Sun Dried Cherry Tomatoes <br>";
+      } else if (arrayOfItems[i] === "drink:1") {
+        finalItemList += "Turmeric Shot with Lemongrass Infused Mineral Water <br>";
     };
   }
   return finalItemList;
@@ -156,9 +165,10 @@ $(document).ready(function() {
 
     // prices
     let priceManager = ((newOrder.pricePizza(newPizza)) + (newOrder.priceSides(newSide)));
+    $(".show").fadeIn(400);
     $("p#price").text(priceFinder(priceManager));
 
     // User Input Displayed 
-    $("p#show-order").html(displayOrder(newPizza));
+    $("p#show-order").html("<strong>entree.</strong> <br>" + (displayOrder(newPizza)) + "<br>" + "<strong>addition.</strong> <br>" + displayOrder(newSide));
   });
 });

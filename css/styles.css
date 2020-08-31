@@ -24,3 +24,7 @@
 .align {
   text-align: right;
 }
+
+.show {
+  display: none;
+}
