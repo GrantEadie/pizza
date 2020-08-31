@@ -108,18 +108,6 @@ Order.prototype.deletePizza = function(id) {
 // User Interface Logic ---------
 let newOrder = new Order();
 
-function displayOrder(orderToDisplay) {
-  let orderList = $("ul#show-order");
-  let htmlForOrder = "";
-  orderToDisplay.pizzas.forEach(function(pizza) {
-    htmlForOrder+= "<li id=" + pizza.id + ">" + pizza.id + ") " + pizza.size + " " + pizza.cheese + " " + pizza.toppings + "</li>"
-  });
-  orderToDisplay.sides.forEach(function(side) {
-    htmlForOrder+= "<li id=" + side.id + ">" + side.id + ") " + side.salad + " " + side.drink + " " + side.dessert + "</li>"
-  });
-  orderList.html(htmlForOrder);
-};
-
 function displayOrder(input) {
   const keys = Object.keys(input);
   console.log(keys);
@@ -133,8 +121,13 @@ function displayOrder(input) {
     for (let i = 0; i < arrayOfItems.length; i++){
       console.log(arrayOfItems[i]);
       if (arrayOfItems[i] === "size:1") {
-        finalItemList += "Square, 12 inches";
-      }
+        finalItemList += "Square, 12 inches <br>";
+      } else if (arrayOfItems[i] === "size:2 <br>") {
+        finalItemList += "Circle, 16 inches <br>";
+      } else if (arrayOfItems[i] === "size:3 <br>") {
+        finalItemList += "Mobius Strip, undefined size <br>";
+      } else if (arrayOfItems[i] === "size:3 <br>") {
+        finalItemList += "Mobius Strip, undefined size <br>";
     };
     return finalItemList;
   }
@@ -162,6 +155,6 @@ $(document).ready(function() {
 
     // User Input Displayed 
     console.log(newPizza);
-    $("p#show-order").text(displayOrder(newPizza));
+    $("p#show-order").html(displayOrder(newPizza));
   });
 });
