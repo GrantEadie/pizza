@@ -104,35 +104,32 @@ Order.prototype.deletePizza = function(id) {
   return false;
 }
 
-
 // User Interface Logic ---------
+
 let newOrder = new Order();
 
 function displayOrder(input) {
   const keys = Object.keys(input);
-  console.log(keys);
   let finalItemList = "";
   let arrayOfItems = [];
     keys.forEach(function(key) {
       arrayOfItems.push(key + ":" + input[key]);
       console.log(arrayOfItems);
     });
-    console.log(arrayOfItems);
-    for (let i = 0; i < arrayOfItems.length; i++){
+    for (let i = 0; i < 3; i++){
       console.log(arrayOfItems[i]);
       if (arrayOfItems[i] === "size:1") {
         finalItemList += "Square, 12 inches <br>";
-      } else if (arrayOfItems[i] === "size:2 <br>") {
+      } else if (arrayOfItems[i] === "size:2") {
         finalItemList += "Circle, 16 inches <br>";
-      } else if (arrayOfItems[i] === "size:3 <br>") {
+      } else if (arrayOfItems[i] === "size:3") {
         finalItemList += "Mobius Strip, undefined size <br>";
-      } else if (arrayOfItems[i] === "size:3 <br>") {
-        finalItemList += "Mobius Strip, undefined size <br>";
+      } else if (arrayOfItems[i] === "cheese:1") {
+        finalItemList += "Aged Chèvre <br>";
     };
-    return finalItemList;
   }
+  return finalItemList;
 }
-
 
 $(document).ready(function() {
   $("form.new-order").submit(function(event) {
@@ -155,7 +152,6 @@ $(document).ready(function() {
     $("p#price").text(priceFinder(priceManager));
 
     // User Input Displayed 
-    console.log(newPizza);
     $("p#show-order").html(displayOrder(newPizza));
   });
 });
