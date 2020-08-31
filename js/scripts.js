@@ -69,17 +69,17 @@ Order.prototype.priceSides = function(side) {
 
 function priceFinder(priceManager) {
   if (priceManager < 4) {
-    return "Your total will be 20";
+    return "Your total will be $21.00.";
   } else if (priceManager <= 5) {
-    return "Your total will be 30";
+    return "Your total will be $33.00.";
   } else if (priceManager <= 6) {
-    return "Your total will be 40";
+    return "Your total will be $42.00.";
   } else if (priceManager <= 7) {
-    return "Your total will be 50";
+    return "Your total will be $50.00.";
   } else if (priceManager <= 8) {
-    return "Your total will be 60" 
+    return "Your total will be $61.00" 
   } else {
-    return "Your total will be 70";
+    return "Your total will be $78.00";
   }
 }
 
@@ -142,6 +142,16 @@ function displayOrder(input) {
         finalItemList += "Simple Farm Greens with Sun Dried Cherry Tomatoes <br>";
       } else if (arrayOfItems[i] === "drink:1") {
         finalItemList += "Turmeric Shot with Lemongrass Infused Mineral Water <br>";
+      } else if (arrayOfItems[i] === "drink:2") {
+        finalItemList += "Lavender Honey June <br>";
+      } else if (arrayOfItems[i] === "drink:3") {
+        finalItemList += "Wild Ferment Basque Style Apple Wine <br>";
+      } else if (arrayOfItems[i] === "dessert:1") {
+        finalItemList += "Golden Raspberry Sorbet <br>";
+      } else if (arrayOfItems[i] === "dessert:2") {
+        finalItemList += "Matcha Tiramisu <br>";
+      } else if (arrayOfItems[i] === "dessert:2") {
+        finalItemList += "Mont Blanc Chocolate Pavlova <br>";
     };
   }
   return finalItemList;
@@ -170,5 +180,6 @@ $(document).ready(function() {
 
     // User Input Displayed 
     $("p#show-order").html("<strong>entree.</strong> <br>" + (displayOrder(newPizza)) + "<br>" + "<strong>addition.</strong> <br>" + displayOrder(newSide));
+    window.scroll(0, 1000);
   });
 });
