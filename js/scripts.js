@@ -171,7 +171,7 @@ $(document).ready(function() {
 
     // prices
     let priceManager = ((newOrder.pricePizza(newPizza)) + (newOrder.priceSides(newSide)));
-    $(".show").fadeIn(400);
+    $(".show").fadeIn(1000);
     $("p#price").text(priceFinder(priceManager));
 
     // User Input Displayed 
