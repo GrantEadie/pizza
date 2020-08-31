@@ -126,6 +126,13 @@ function displayOrder(input) {
         finalItemList += "Mobius Strip, undefined size <br>";
       } else if (arrayOfItems[i] === "cheese:1") {
         finalItemList += "Aged Chèvre <br>";
+      } else if (arrayOfItems[i] === "cheese:2") {
+        finalItemList += "Red Wine Marinated Bocconcini <br>";
+      } else if (arrayOfItems[i] === "cheese:3") {
+        finalItemList += "Authentic La Mancha Manchego <br>";
+      } else if (arrayOfItems[i] === "toppings:1") {
+        finalItemList += "Arugula and Prosciutto <br>";
+        
     };
   }
   return finalItemList;
