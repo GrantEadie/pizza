@@ -21,14 +21,12 @@ Order.prototype.assignId = function() {
   return this.currentId;
 }
 
-
 // Business Logic for Sides --------- 
 function Sides(salad, drink, dessert) {
   this.salad = salad;
   this.drink = drink;
   this.dessert = dessert;
 }
-
 
 // Business Logic for Pizzas --------- 
 function Pizza(size, cheese, topping) {
@@ -38,7 +36,6 @@ function Pizza(size, cheese, topping) {
 }
 
 // Price Logic
-
 Order.prototype.pricePizza = function(pizza) {
   let sum = 0;
   let i = 0;
@@ -77,9 +74,9 @@ function priceFinder(priceManager) {
   } else if (priceManager <= 7) {
     return "Your total will be $50.00.";
   } else if (priceManager <= 8) {
-    return "Your total will be $61.00" 
+    return "Your total will be $61.00." 
   } else {
-    return "Your total will be $78.00";
+    return "Your total will be $78.00.";
   }
 }
 
@@ -105,7 +102,6 @@ Order.prototype.deletePizza = function(id) {
 }
 
 // User Interface Logic ---------
-
 let newOrder = new Order();
 
 function displayOrder(input) {
