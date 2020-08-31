@@ -17,6 +17,18 @@ _{This application will prompt the user to input their selection of pizza size, 
 * _Open index.html in your chosen browser_
 * _Fill out survey and click Submit_
 
+## Specs
+
+Spec: The program returns a price based on the selections from the user.
+  Input: "Arugula and Prosciutto & Alaskan Salmon, Spinach, Pickled Medley & Wild Morels and grass fed, humanely raised Filet Minot"
+  Output: "Your total will be $21.00"
+
+Spec: The program returns the user's input with corridinating output.
+  Input: "Arugula and Prosciutto & Alaskan Salmon, Spinach, Pickled Medley & Wild Morels and grass fed, humanely raised Filet Minot"
+  Output: entree.
+            Square, 12 inches
+            Aged Chèvre
+            Arugula and Prosciutto
 
 ## Known Bugs
 
